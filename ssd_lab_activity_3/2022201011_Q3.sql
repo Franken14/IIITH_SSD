@@ -1,0 +1,1 @@
+SELECT Essn AS "Manager Ssn",COUNT(Pno) AS "Number of Projects" from WORKS_ON where Essn IN(SELECT Mgr_ssn from DEPARTMENT where Dnumber IN (SELECT Dnum from PROJECT where Pname="ProductY"))GROUP BY Essn;

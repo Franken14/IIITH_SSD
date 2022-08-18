@@ -1,0 +1,1 @@
+SELECT Mgr_ssn AS "Manager SSN",Dnumber AS "Dept ID",COUNT(Dependent_name) AS "Number of Dependents" FROM DEPARTMENT JOIN DEPENDENT WHERE Essn=Mgr_ssn AND Mgr_ssn IN(SELECT Mgr_ssn FROM DEPARTMENT WHERE Dnumber IN(SELECT Dnumber FROM DEPT_LOCATIONS GROUP BY Dnumber HAVING count(*)>1))GROUP BY Mgr_ssn,Dnumber;

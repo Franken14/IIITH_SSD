@@ -1,0 +1,1 @@
+SELECT CONCAT(Fname," ",Lname) AS Name,Ssn,Dnumber AS "Dept ID",Dname AS "Dept Name" from EMPLOYEE join DEPARTMENT WHERE Ssn=Mgr_Ssn AND Mgr_Ssn IN(SELECT Mgr_Ssn from DEPARTMENT WHERE Dnumber in (SELECT DISTINCT Dnum from PROJECT where Pnumber IN(SELECT DISTINCT Pno from WORKS_ON where Hours<40)));
