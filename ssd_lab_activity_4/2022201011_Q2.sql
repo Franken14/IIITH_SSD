@@ -1,0 +1,17 @@
+USE CUSTOMER_DB;
+
+DELIMITER &&
+CREATE PROCEDURE q23(
+IN a VARCHAR(30)
+)
+BEGIN
+SELECT 
+CUST_NAME
+FROM 
+customer 
+WHERE customer.WORKING_AREA=a;
+END&&
+
+DELIMITER ;
+
+call q23('Bangalore');
