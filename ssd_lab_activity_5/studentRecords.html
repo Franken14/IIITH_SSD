@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="style.css"/> 
+        <title>Student Records</title>
+        <script>
+            function insert(a,b){
+            var table=document.getElementById("tablee");
+            aa=document.getElementById('a').value;
+            bb=document.getElementById('b').value;
+            var row=table.insertRow(table.length);
+            var cell1=row.insertCell(0);
+            var cell2=row.insertCell(1);
+            cell1.innerHTML=aa;
+            cell2.innerHTML=bb;
+            }
+            function deleteRow(){
+                var del=document.getElementById('tablee');
+                var rowsc=del.rows.length;
+                if(rowsc!=1){
+                    tablee.deleteRow(rowsc-1);
+                }
+            }
+        </script>
+    </head>
+    <body class="bodd">
+        <h1>
+            Student Records
+        </h1>
+        <div id="inputr">
+        <div>
+            <form action="" method="get" class="form-example2">
+                <input type="text" name="Roll" placeholder="Roll No." id="a">
+                <input type="text" name="Name" placeholder="Name" id="b">
+                <input type="button" onclick="insert()" value="Add Row" style="background-color:#1b9c08; color:white;">
+                </form>
+        </div>
+            
+        <div style="margin-top: 20px;">
+            <table id="tablee">
+                <tr>
+                    <th>Roll No.</th>
+                    <th>Name</th>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div style="text-align: center; padding-top: 20px;" >
+            <input type="button" onclick="deleteRow()" value="Delete Row" style="background-color: red; color:white"; >
+        </div>
+        </div>
+    </body>
+</html>
