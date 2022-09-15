@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="styles.css"/> 
+        <title>Form</title>
+        <script src="scri.js"></script> 
+    </head>
+    <body>
+        <h2>
+            <b>Team Form</b>
+        </h2>
+        <form>
+            <table>
+                <tr>
+                <td>Manager Name </td>
+                <td class="padd"><input type="text" name="manager_name" id="manager" required> </td>
+                </tr>
+                
+                <tr>
+                    <td>Group Email</td>
+                    <td class="padd">
+                        <input type="email" name="email" id="emails" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Server Username
+                    </td>
+                    <td class="padd">
+                        <input type="text" name="username" id="serv_user" pattern="(?=.*\d)(?=*[a-z])(?=.*[A-Z])" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Server password
+                    </td>
+                    <td class="padd">
+                        <input type="password" id="inp" name="password" required>
+                    </td>
+                    <td id="errors">
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Confirm password
+                    </td>
+                    <td class="padd">
+                        <input type="password" name="confirm" id="conf" required onchange="user_val()">
+                    </td>
+                    <td id="errors">
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="people">Team Lead:</label>
+                    </td>
+                    <td class="padd">
+                        <select name="team lead" id="lead">
+                        <option value="Aakash">Aakash</option>
+                        <option value="Jatin">Jatin</option>
+                        <option value="Arun">Arun</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Team Members
+                    </td>
+                    <td>
+                        <div class="from">
+                            <div>Nikhil</div>
+                            <div>Harsimran</div>
+                            <div>Mayush</div>
+                            <div>Sumith</div>
+                        </div>
+                        <div class="result">
+
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Submit" style="width:50%" id="sub_button" onclick="submit_form()">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
